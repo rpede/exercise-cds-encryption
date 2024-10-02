@@ -1,3 +1,4 @@
+using cds_encryption.Services;
 
 namespace cds_encryption;
 
@@ -8,6 +9,10 @@ public class Program
         var builder = WebApplication.CreateBuilder(args);
 
         // Add services to the container.
+        builder.Services.AddSingleton<IStorageService>(
+            (_) => StorageService.CreateWithDefaultPath()
+        );
+        builder.Services.AddSingleton<IEncryptionService, EncryptionService>();
 
         builder.Services.AddControllers();
         // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -26,7 +31,6 @@ public class Program
         app.UseHttpsRedirection();
 
         app.UseAuthorization();
-
 
         app.MapControllers();
 
