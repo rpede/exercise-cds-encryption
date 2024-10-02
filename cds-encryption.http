@@ -1,0 +1,6 @@
+@cds_encryption_HostAddress = http://localhost:5097
+
+GET {{cds_encryption_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
