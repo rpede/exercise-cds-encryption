@@ -110,7 +110,7 @@ var salt = RandomNumberGenerator.GetBytes(256 / 8);
 ```
 
 Then use
-[KeyDerivation.Pbkdf2](https://learn.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.cryptography.keyderivation.keyderivation.pbkdf1)
+[KeyDerivation.Pbkdf2](https://learn.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.cryptography.keyderivation.keyderivation.pbkdf2)
 to generate a key from the password.
 
 ```cs
